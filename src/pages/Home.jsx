@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import profil from "../assets/profil.jpg";
 
 // Variants reusable
 const fadeUp = (delay = 0) => ({
@@ -51,10 +52,8 @@ function Home() {
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-8 px-4 pt-12 sm:px-5 md:flex-row md:items-start md:gap-12 md:px-6 md:pt-0">
-        
         {/* LEFT TEXT SECTION */}
         <div className="w-full md:basis-[60%] space-y-6 text-center md:text-left">
-          
           <motion.p
             variants={fadeUp(0.2)}
             initial="hidden"
@@ -87,7 +86,6 @@ function Home() {
             code, and delightful user journeys.
           </motion.p>
 
-
           <motion.div
             variants={fadeUp(0.7)}
             initial="hidden"
@@ -115,7 +113,6 @@ function Home() {
           </motion.div>
         </div>
 
-
         <motion.div
           variants={fadeRight(0.4)}
           initial="hidden"
@@ -133,10 +130,11 @@ function Home() {
             <div className="relative mx-auto overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/50 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5">
               <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-transparent" />
               <img
-                src="/src/assets/profil.jpg"
+                src={profil}
                 alt="Profile portrait"
                 className="h-full w-full rounded-2xl object-cover"
               />
+
               <div className="mt-4 text-center">
                 <p className="text-base font-semibold text-slate-100 sm:text-lg">
                   Aditri Surya Nugraha
