@@ -53,13 +53,14 @@ function Contact() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.h2
-          className="text-3xl font-semibold text-slate-100"
+          className="text-4xl font-semibold text-teal-300"
+          style={{ textShadow: '2px 2px 1px white' }}
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ delay: 0.15, duration: 0.5 }}
         >
-          Kontak
+          Contact Me
         </motion.h2>
 
         <motion.p
@@ -70,8 +71,7 @@ function Contact() {
           viewport={{ once: false, amount: 0.4 }}
           transition={{ delay: 0.25, duration: 0.55 }}
         >
-          Punya proyek atau ingin berdiskusi? Saya terbuka untuk kerja lepas,
-          magang, maupun kolaborasi.
+          Feel free to reach out via the social media links below.
         </motion.p>
 
         <motion.div

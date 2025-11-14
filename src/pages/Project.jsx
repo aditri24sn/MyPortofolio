@@ -86,10 +86,11 @@ function Project() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <h2 className="text-3xl font-semibold text-slate-100">
+        <h2 className="text-6xl text-center font-semibold text-teal-300 p-1"
+        style={{ textShadow: '2px 2px 1px white' }}>
           Featured Projects
         </h2>
-        <p className="max-w-2xl text-slate-300">
+        <p className=" text-center text-xl text-slate-300">
           A selection of work that highlights problem solving, attention to
           detail, and the ability to collaborate across disciplines.
         </p>
@@ -116,14 +117,14 @@ function Project() {
           >
             <motion.h3
               variants={fadeUp}
-              className="text-xl font-semibold text-slate-100"
+              className="text-2xl font-semibold text-slate-100"
             >
               {project.title}
             </motion.h3>
 
             <motion.p
               variants={fadeUp}
-              className="mt-3 text-sm text-slate-300 leading-relaxed"
+              className="mt-3 text-base text-slate-300 leading-relaxed"
             >
               {project.description}
             </motion.p>
@@ -144,7 +145,7 @@ function Project() {
               href={project.link}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center text-sm font-medium text-teal-300 transition group-hover:gap-2"
+              className="mt-6 inline-flex items-center text-base font-medium text-teal-300 transition group-hover:gap-2"
               whileHover={{ gap: "12px" }}
             >
               View Repository →

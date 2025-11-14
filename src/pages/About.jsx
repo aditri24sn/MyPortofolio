@@ -63,7 +63,7 @@ function About() {
   const cardWidth = 700; // min-w-[700px]
   const gap = 16; // gap-4 = 1rem = 16px
   const totalWidth = (cardWidth + gap) * experiences.length;
-  
+
   const duplicatedExperiences = [...experiences, ...experiences];
 
   return (
@@ -84,21 +84,21 @@ function About() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.4 }}
         >
-          <h2 className="text-3xl font-semibold text-slate-100">
-            Tentang Saya
+          <h2 className="text-6xl font-semibold text-center text-teal-300 text-shadow-amber-200 p-2"
+          style={{ textShadow: '2px 2px 1px white' }}>
+            About Me
           </h2>
 
-          <p className="text-slate-300 leading-relaxed max-w-4xl">
-            Saya adalah seorang web developer yang fokus pada pembangunan
-            antarmuka modern, aksesibel, dan performan. Saya menyukai proses
-            menerjemahkan ide menjadi produk digital yang nyata, rapi, dan mudah
-            digunakan.
+          <p className="text-slate-300 text-center text-xl leading-relaxed">
+            I am a web developer focused on building modern, accessible, and
+            high-performance interfaces. I enjoy turning ideas into polished,
+            functional digital products that are intuitive and user-friendly.
           </p>
 
-          <p className="text-slate-300 leading-relaxed max-w-4xl">
-            Di luar coding, saya senang mempelajari tren desain, mengeksplorasi
-            tools baru, dan mengembangkan kebiasaan kerja yang efektif untuk
-            tim.
+          <p className="text-slate-300 text-center text-xl leading-relaxed">
+            Beyond coding, I love exploring design trends, experimenting with
+            new tools, and cultivating effective work habits that enhance team
+            collaboration.
           </p>
         </motion.div>
 
@@ -123,7 +123,7 @@ function About() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 25,
+                  duration: 35,
                   ease: "linear",
                 },
               }}

@@ -65,10 +65,11 @@ function Skills() {
         whileInView="visible"
         viewport={{ once: false }}
       >
-        <h2 className="text-4xl font-bold text-center text-slate-900 dark:text-slate-100">
+        <h2 className="text-6xl font-bold text-center text-slate-900 dark:text-teal-300 p-2"
+        style={{ textShadow: '2px 2px 1px white' }}>
           Skill&apos;s
         </h2>
-        <p className="mt-3 text-center text-slate-600 dark:text-slate-300">
+        <p className="mt-3 text-xl text-center text-slate-600 dark:text-slate-300">
           These are the technologies and languages I’ve worked with
         </p>
       </motion.div>

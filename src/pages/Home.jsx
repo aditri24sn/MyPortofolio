@@ -37,7 +37,7 @@ const fadeRight = (delay = 0) => ({
 });
 
 function Home() {
-  const [spinCount, setSpinCount] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <section
@@ -59,7 +59,7 @@ function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.6 }}
-            className="mt-2 md:mt-6 text-sm uppercase tracking-[0.35em] text-teal-300"
+            className="mt-2 md:mt-6 text-lg uppercase tracking-[0.35em] text-teal-300"
           >
             Hello, I'm
           </motion.p>
@@ -113,21 +113,60 @@ function Home() {
           </motion.div>
         </div>
 
+        {/* RIGHT FLIP CARD SECTION */}
         <motion.div
           variants={fadeRight(0.4)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.6 }}
           className="w-full max-w-xs md:max-w-sm"
+          style={{ perspective: "1000px" }}
         >
           <motion.div
-            onClick={() => setSpinCount(2)}
-            animate={{ rotateY: spinCount > 0 ? 180 * 1 : 0 }}
-            transition={{ duration: 1.0, ease: "easeInOut" }}
-            onAnimationComplete={() => setSpinCount(0)}
+            onClick={() => setIsFlipped(!isFlipped)}
+            animate={{ rotateY: isFlipped ? 180 : 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="relative cursor-pointer"
+            style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="relative mx-auto overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/50 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5">
+            {/* BACK SIDE - Click Me */}
+            <div
+              className="absolute inset-0 mx-auto rounded-3xl border border-slate-700/60 bg-gradient-to-br from-teal-500/20 via-indigo-500/20 to-slate-900/90 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5 flex items-center justify-center"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(0deg)",
+              }}
+            >
+              <div className="text-center space-y-4">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="text-6xl sm:text-7xl"
+                >
+                  👆
+                </motion.div>
+                <p className="text-2xl sm:text-3xl font-bold text-teal-300">
+                  Click Me!
+                </p>
+                <p className="text-sm text-slate-400">Discover who I am</p>
+              </div>
+            </div>
+
+            {/* FRONT SIDE - Profile Photo */}
+            <div
+              className="relative mx-auto overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/50 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+              }}
+            >
               <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-transparent" />
               <img
                 src={profil}
