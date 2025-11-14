@@ -4,44 +4,30 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "A responsive personal site showcasing professional experience, featured work, and design experiments.",
+      "Website portofolio pribadi yang menampilkan pengalaman, proyek, dan keahlian secara responsif dengan animasi modern.",
     tech: ["React", "Tailwind CSS", "Vite"],
-    link: "https://github.com/username/portfolio",
+    link: "https://github.com/aditri24sn/MyPortofolio",
   },
   {
-    title: "Portfolio Website",
+    title: "Desa Belung Poncokusumo Website",
     description:
-      "A responsive personal site showcasing professional experience, featured work, and design experiments.",
-    tech: ["React", "Tailwind CSS", "Vite"],
-    link: "https://github.com/username/portfolio",
+      "Website profil desa yang informatif dan responsif untuk menampilkan potensi desa, berita, dan layanan masyarakat.",
+    tech: ["React", "Tailwind CSS", "Next.js"],
+    link: "https://github.com/AgungAryansyah/website-desa-belung",
   },
   {
-    title: "Task Manager API",
+    title: "MiniMe UI UX Design",
     description:
-      "RESTful API that lets teams create tasks, assign members, and track progress with clear analytics.",
-    tech: ["Node.js", "Express", "MongoDB"],
-    link: "https://github.com/username/task-manager",
+      "Desain UI/UX aplikasi monitoring ibu hamil yang menyediakan tampilan ramah pengguna untuk memantau perkembangan kehamilan, jadwal kontrol, pengingat kesehatan, dan edukasi selama masa kehamilan.",
+    tech: ["Figma"],
+    link: "https://www.figma.com/proto/mhFkkeB2K16jYI2zKJAumO/MiniMe?node-id=1-3&t=6PeFhWcalg7SPYSN-1",
   },
   {
-    title: "Portfolio Website",
+    title: "SanberCode Project Lowongan Pekerjaan",
     description:
-      "A responsive personal site showcasing professional experience, featured work, and design experiments.",
-    tech: ["React", "Tailwind CSS", "Vite"],
-    link: "https://github.com/username/portfolio",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A responsive personal site showcasing professional experience, featured work, and design experiments.",
-    tech: ["React", "Tailwind CSS", "Vite"],
-    link: "https://github.com/username/portfolio",
-  },
-  {
-    title: "Design System Starter",
-    description:
-      "Reusable component library with tokens, documentation, and example layouts for fast prototyping.",
-    tech: ["Storybook", "TypeScript", "Styled Components"],
-    link: "https://github.com/username/design-system",
+      "Website sederhana dengan landing page lowongan pekerjaan yang menampilkan daftar pekerjaan, detail job, dan tampilan UI responsif sebagai final project SanberCode.",
+    tech: ["JavaScript", "HTML", "React", "Tailwind CSS"],
+    link: "https://finalproject-aditrisuryanoplagiat.netlify.app/",
   },
 ];
 
@@ -100,10 +86,12 @@ function Project() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <h2 className="text-3xl font-semibold text-slate-100">Featured Projects</h2>
+        <h2 className="text-3xl font-semibold text-slate-100">
+          Featured Projects
+        </h2>
         <p className="max-w-2xl text-slate-300">
-          A selection of work that highlights problem solving, attention to detail,
-          and the ability to collaborate across disciplines.
+          A selection of work that highlights problem solving, attention to
+          detail, and the ability to collaborate across disciplines.
         </p>
       </motion.div>
 

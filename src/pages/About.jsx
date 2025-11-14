@@ -21,38 +21,49 @@ const fadeUpStrong = (delay = 0) => ({
 
 const experiences = [
   {
-    role: "Front-end Developer",
-    company: "Nama Perusahaan A",
-    period: "2024-01-15 - Sekarang",
-    desc: "Bertanggung jawab untuk membangun antarmuka responsif, berkolaborasi dengan tim desain, dan meningkatkan performa aplikasi web.",
+    role: "Staff Ahli Divisi PSDM",
+    company: "KBMDSI FILKOM UB",
+    period: "2024",
+    desc: "Merancang dan melaksanakan program kerja berbasis pengembangan sumber daya manusia, memberikan bimbingan dan evaluasi, serta mengembangkan kemampuan komunikasi dan kepemimpinan untuk menunjang operasional program.",
   },
   {
-    role: "UI/UX Intern",
-    company: "Nama Perusahaan B",
-    period: "2023-06-01 - 2023-12-31",
-    desc: "Membantu riset pengguna, membuat wireframe dan prototipe, serta menguji pengalaman pengguna untuk berbagai produk digital.",
+    role: "Bendahara",
+    company: "FORTERY",
+    period: "2024",
+    desc: "Mengelola seluruh operasional keuangan acara, termasuk penganggaran, pelacakan pengeluaran, alokasi dana, serta memastikan kegiatan berjalan lancar dan sesuai rencana.",
   },
   {
-    role: "Web Developer Intern",
-    company: "Nama Perusahaan C",
-    period: "2022-08-15 - 2023-05-30",
-    desc: "Mengembangkan fitur-fitur baru untuk website perusahaan dan mempelajari best practices dalam pengembangan web modern.",
+    role: "Bendahara",
+    company: "ASCEND",
+    period: "2025",
+    desc: "Bertanggung jawab atas perencanaan keuangan acara, memantau pengeluaran, serta menjaga stabilitas finansial dengan pengelolaan dan pencatatan keuangan yang rapi.",
   },
   {
-    role: "Backend Developer",
-    company: "Nama Perusahaan D",
-    period: "2022-01-10 - 2022-08-01",
-    desc: "Membangun API RESTful dan mengelola database untuk berbagai aplikasi perusahaan.",
+    role: "Wakil Ketua Divisi Operasional",
+    company: "PEMILWA FILKOM UB",
+    period: "2024",
+    desc: "Mengawasi dan mengelola aspek logistik serta operasional pemilihan, mengoordinasikan pelaksanaan acara di lapangan, dan berkolaborasi dengan Panitia Dosen untuk menjaga efisiensi dan transparansi kegiatan.",
   },
   {
-    role: "Software Engineering Intern",
-    company: "Nama Perusahaan E",
-    period: "2021-06-15 - 2021-12-20",
-    desc: "Belajar fundamental programming dan berpartisipasi dalam pengembangan proyek internal perusahaan.",
+    role: "Wakil Ketua Divisi Perlengkapan",
+    company: "PKKMB & SA FILKOM UB",
+    period: "2025 - Sekarang",
+    desc: "Mengawasi pengadaan, manajemen, dan pemeliharaan peralatan untuk mendukung kelancaran acara serta bertanggung jawab atas inventarisasi dan distribusi logistik ke seluruh divisi terkait.",
+  },
+  {
+    role: "Asisten Praktikum – Dasar Pengembangan Sistem Informasi ",
+    company: "Fakultas Ilmu Komputer Universitas Brawijaya",
+    period: "2025 - Sekarang",
+    desc: "Mengawasi jalannya praktikum, mendampingi mahasiswa dalam penggunaan teknis software, serta menjaga ketertiban dan ketepatan prosedur selama sesi praktikum.",
   },
 ];
 
 function About() {
+  // Hitung total lebar konten untuk seamless loop
+  const cardWidth = 700; // min-w-[700px]
+  const gap = 16; // gap-4 = 1rem = 16px
+  const totalWidth = (cardWidth + gap) * experiences.length;
+  
   const duplicatedExperiences = [...experiences, ...experiences];
 
   return (
@@ -62,7 +73,7 @@ function About() {
       variants={fadeUpStrong(0)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       <div className="space-y-12">
         {/* TENTANG SAYA */}
@@ -107,12 +118,12 @@ function About() {
           <div className="relative overflow-hidden">
             <motion.div
               className="flex gap-4"
-              animate={{ x: [0, -1400] }}
+              animate={{ x: [0, -totalWidth] }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 25,
                   ease: "linear",
                 },
               }}
@@ -129,15 +140,15 @@ function About() {
                 >
                   <div className="space-y-4 flex-1 flex flex-col">
                     <div>
-                      <h4 className="text-base font-semibold text-slate-100 mb-2">
+                      <h4 className=" text-2xl font-semibold text-slate-100 mb-2">
                         {exp.role}
                       </h4>
-                      <p className="text-sm font-medium text-teal-300 mb-1">
+                      <p className="text-xl font-medium text-teal-300 mb-1">
                         {exp.company}
                       </p>
-                      <p className="text-xs text-slate-400">{exp.period}</p>
+                      <p className="text-lg text-slate-400">{exp.period}</p>
                     </div>
-                    <p className="text-slate-300 text-sm leading-relaxed flex-1">
+                    <p className="text-slate-300 text-lg leading-relaxed flex-1">
                       {exp.desc}
                     </p>
                   </div>
