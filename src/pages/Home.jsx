@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import profil from "../assets/profil.jpg";
 
 function Home() {
   const [spinCount, setSpinCount] = useState(0);
@@ -95,10 +96,11 @@ function Home() {
             <div className="relative mx-auto overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/50 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5">
               <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-transparent" />
               <img
-                src="/src/assets/profil.svg"
+                src={profil}
                 alt="Profile portrait"
                 className="h-full w-full rounded-2xl object-cover"
               />
+
               <div className="mt-4 text-center">
                 <p className="text-base font-semibold text-slate-100 sm:text-lg">
                   Aditri Surya Nugraha
