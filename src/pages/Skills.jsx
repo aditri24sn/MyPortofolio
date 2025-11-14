@@ -5,20 +5,22 @@ import HTML from "../assets/html.svg";
 import CSS from "../assets/CSS.svg";
 import Tailwind from "../assets/Tailwind.svg";
 import JavaScript from "../assets/JS.svg";
-import Github from "../assets/github1.svg";
+import Git from "../assets/git.png";
 import Figma from "../assets/figma.svg";
 import Vite from "../assets/Vite.png";
+import NextJs from "../assets/nextjs.png";
 
 const skills = [
   { name: "HTML", img: HTML },
   { name: "CSS", img: CSS },
-  { name: "Tailwind", img: Tailwind },
   { name: "JavaScript", img: JavaScript },
+  { name: "Tailwind", img: Tailwind },
   { name: "React", img: reactLogo },
-  { name: "Java", img: Java },
-  { name: "GitHub", img: Github },
-  { name: "Figma", img: Figma },
   { name: "Vite", img: Vite },
+  { name: "Next", img: NextJs },
+  { name: "Java", img: Java },
+  { name: "Git", img: Git },
+  { name: "Figma", img: Figma },
 ];
 
 // --- Variants Reusable ---
@@ -56,7 +58,7 @@ function Skills() {
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.25 }}   // ← animasi muncul setiap scroll
+      viewport={{ once: false, amount: 0.25 }} // ← animasi muncul setiap scroll
     >
       {/* Header */}
       <motion.div
@@ -65,8 +67,10 @@ function Skills() {
         whileInView="visible"
         viewport={{ once: false }}
       >
-        <h2 className="text-6xl font-bold text-center text-slate-900 dark:text-teal-300 p-2"
-        style={{ textShadow: '2px 2px 1px white' }}>
+        <h2
+          className="text-6xl font-bold text-center text-slate-900 dark:text-teal-300 p-2"
+          style={{ textShadow: "2px 2px 1px white" }}
+        >
           Skill&apos;s
         </h2>
         <p className="mt-3 text-xl text-center text-slate-600 dark:text-slate-300">
@@ -76,11 +80,11 @@ function Skills() {
 
       {/* Skill Grid */}
       <motion.div
-        className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        className="mt-10 flex flex-wrap justify-center gap-6 max-w-4xl mx-auto"
         variants={gridVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}   // ← ini juga harus false
+        viewport={{ once: false, amount: 0.3 }} // ← ini juga harus false
       >
         {skills.map(({ name, img }) => (
           <motion.div
@@ -91,7 +95,7 @@ function Skills() {
               boxShadow: "0 18px 30px rgba(15, 118, 110, 0.18)",
             }}
             transition={{ type: "spring", stiffness: 220, damping: 16 }}
-            className="rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/40 p-6 text-center shadow-sm"
+            className="rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/40 p-6 text-center shadow-sm w-50"
           >
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-slate-50/50 dark:bg-slate-900/60">
               {img ? (
