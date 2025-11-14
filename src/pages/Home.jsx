@@ -1,6 +1,39 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import profil from "../assets/profil.jpg";
+
+// Variants reusable
+const fadeUp = (delay = 0) => ({
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay, duration: 0.6 },
+  },
+});
+
+const fadeUpStrong = (delay = 0) => ({
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay, duration: 0.7 },
+  },
+});
+
+const fadeRight = (delay = 0) => ({
+  hidden: { opacity: 0, x: 60, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      delay,
+      duration: 0.6,
+      type: "spring",
+      stiffness: 150,
+    },
+  },
+});
 
 function Home() {
   const [spinCount, setSpinCount] = useState(0);
@@ -10,6 +43,7 @@ function Home() {
       id="home"
       className="relative min-h-[75vh] flex items-center overflow-hidden scroll-mt-24"
     >
+      {/* Background floating gradient */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-teal-500/15 via-indigo-500/10 to-transparent blur-3xl"
         animate={{ scale: [1, 1.05, 1], rotate: [0, 2, -2, 0] }}
@@ -17,29 +51,35 @@ function Home() {
       />
 
       <div className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-8 px-4 pt-12 sm:px-5 md:flex-row md:items-start md:gap-12 md:px-6 md:pt-0">
+        
+        {/* LEFT TEXT SECTION */}
         <div className="w-full md:basis-[60%] space-y-6 text-center md:text-left">
+          
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            variants={fadeUp(0.2)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.6 }}
             className="mt-2 md:mt-6 text-sm uppercase tracking-[0.35em] text-teal-300"
           >
-            Hello, I&apos;m
+            Hello, I'm
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
+            variants={fadeUpStrong(0.35)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.6 }}
             className="text-3xl font-bold text-slate-50 sm:text-4xl md:text-6xl"
           >
             Aditri Surya Nugraha
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
+            variants={fadeUp(0.5)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.6 }}
             className="mx-auto max-w-2xl text-base text-slate-300 leading-relaxed sm:text-lg md:mx-0 md:text-xl"
           >
             I build thoughtful digital experiences with modern web technologies.
@@ -47,10 +87,12 @@ function Home() {
             code, and delightful user journeys.
           </motion.p>
 
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            variants={fadeUp(0.7)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.6 }}
             className="flex w-full flex-col gap-3 pt-3 sm:flex-row sm:gap-4"
           >
             <motion.a
@@ -61,6 +103,7 @@ function Home() {
             >
               View Projects
             </motion.a>
+
             <motion.a
               href="https://www.linkedin.com/in/aditrisuryanugraha/"
               whileHover={{ y: -3 }}
@@ -72,35 +115,28 @@ function Home() {
           </motion.div>
         </div>
 
+
         <motion.div
-          initial={{ opacity: 0, x: 60, scale: 0.9 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{
-            delay: 0.4,
-            duration: 0.6,
-            type: "spring",
-            stiffness: 150,
-          }}
+          variants={fadeRight(0.4)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.6 }}
           className="w-full max-w-xs md:max-w-sm"
         >
           <motion.div
             onClick={() => setSpinCount(2)}
             animate={{ rotateY: spinCount > 0 ? 180 * 1 : 0 }}
-            transition={{
-              duration: 1.0,
-              ease: "easeInOut",
-            }}
+            transition={{ duration: 1.0, ease: "easeInOut" }}
             onAnimationComplete={() => setSpinCount(0)}
             className="relative cursor-pointer"
           >
             <div className="relative mx-auto overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/50 p-4 shadow-[0_25px_50px_-12px_rgba(45,212,191,0.25)] sm:p-5">
               <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-transparent" />
               <img
-                src={profil}
+                src="/src/assets/profil.jpg"
                 alt="Profile portrait"
                 className="h-full w-full rounded-2xl object-cover"
               />
-
               <div className="mt-4 text-center">
                 <p className="text-base font-semibold text-slate-100 sm:text-lg">
                   Aditri Surya Nugraha

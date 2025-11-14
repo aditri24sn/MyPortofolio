@@ -21,11 +21,21 @@ const skills = [
   { name: "Vite", img: Vite },
 ];
 
+// --- Variants Reusable ---
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
+};
+
 const gridVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
   },
 };
 
@@ -34,7 +44,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.55, ease: "easeOut" },
   },
 };
 
@@ -43,17 +53,17 @@ function Skills() {
     <motion.section
       id="skills"
       className="max-w-7xl mx-auto px-4 md:px-6 scroll-mt-24"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7 }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.25 }}   // ← animasi muncul setiap scroll
     >
       {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ delay: 0.2, duration: 0.55 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
       >
         <h2 className="text-4xl font-bold text-center text-slate-900 dark:text-slate-100">
           Skill&apos;s
@@ -69,7 +79,7 @@ function Skills() {
         variants={gridVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}   // ← ini juga harus false
       >
         {skills.map(({ name, img }) => (
           <motion.div

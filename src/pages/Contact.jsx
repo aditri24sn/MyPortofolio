@@ -23,21 +23,33 @@ const contactLinks = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const pop = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 function Contact() {
   return (
     <motion.section
       id="contact"
       className="max-w-7xl mx-auto px-4 md:px-6 scroll-mt-24"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
+       variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.25 }}
       transition={{ duration: 0.7 }}
     >
       <motion.div
         className="rounded-3xl border border-slate-800 bg-slate-900/40 p-10 text-center shadow-xl/30"
-        initial={{ scale: 0.96, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        variants={pop}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.35 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.h2
@@ -52,9 +64,10 @@ function Contact() {
 
         <motion.p
           className="mt-4 text-slate-300 leading-relaxed"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.4 }}
           transition={{ delay: 0.25, duration: 0.55 }}
         >
           Punya proyek atau ingin berdiskusi? Saya terbuka untuk kerja lepas,
@@ -63,9 +76,10 @@ function Contact() {
 
         <motion.div
           className="mt-8 flex flex-wrap justify-center gap-4 text-sm font-semibold"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.35 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.35 }}
           transition={{ delay: 0.35, duration: 0.5 }}
         >
           {contactLinks.map(({ label, href, bg, outline }) => (
@@ -90,9 +104,10 @@ function Contact() {
 
         <motion.p
           className="mt-10 text-xs uppercase tracking-[0.35em] text-slate-500"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.4 }}
           transition={{ delay: 0.45, duration: 0.45 }}
         >
        
