@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 
 const contactLinks = [
-  {
-    label: "Email",
-    href: "mailto:aditrisurya@gmail.com",
-    outline: true,
-  },
+  
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/aditrisuryanugraha/",
@@ -14,6 +10,11 @@ const contactLinks = [
   {
     label: "Instagram",
     href: "https://instagram.com/aditri.surya",
+    outline: true,
+  },
+  {
+    label: "Twitter / X",
+    href: "https://x.com/surya_aditri?t=8rJxZdKRCnfQTZTzoS0zGA&s=09",
     outline: true,
   },
   {
