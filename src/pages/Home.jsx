@@ -81,9 +81,9 @@ function Home() {
             viewport={{ once: false, amount: 0.6 }}
             className="mx-auto max-w-2xl text-base text-slate-300 leading-relaxed sm:text-lg md:mx-0 md:text-xl"
           >
-            I build thoughtful digital experiences with modern web technologies.
-            Currently focused on crafting responsive interfaces, performant
-            code, and delightful user journeys.
+            Crafting innovative digital experiences through technology,
+            combining system design, development, and practical problem-solving
+            to deliver impactful solutions.
           </motion.p>
 
           <motion.div
@@ -177,9 +177,6 @@ function Home() {
               <div className="mt-4 text-center">
                 <p className="text-base font-semibold text-slate-100 sm:text-lg">
                   Aditri Surya Nugraha
-                </p>
-                <p className="text-xs text-slate-400 sm:text-sm">
-                  Front-end Developer
                 </p>
               </div>
             </div>
