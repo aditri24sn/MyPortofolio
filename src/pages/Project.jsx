@@ -4,30 +4,37 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "Website portofolio pribadi yang menampilkan pengalaman, proyek, dan keahlian secara responsif dengan animasi modern.",
+      "A personal portfolio website showcasing my experience, projects, and technical skills with a responsive layout and modern animations. Built to highlight my profile as a frontend developer and provide an engaging user experience across devices.",
     tech: ["React", "Tailwind CSS", "Vite"],
-    link: "https://github.com/aditri24sn/MyPortofolio",
+    link: "https://aditri-surya.netlify.app/",
   },
   {
     title: "Desa Belung Poncokusumo Website",
     description:
-      "Website profil desa yang informatif dan responsif untuk menampilkan potensi desa, berita, dan layanan masyarakat.",
+      "An informative and responsive village profile website designed to present village potential, news, and public services in a clear and accessible way. The website focuses on usability and structured content delivery for the local community.  ",
     tech: ["React", "Tailwind CSS", "Next.js"],
     link: "https://github.com/AgungAryansyah/website-desa-belung",
   },
   {
     title: "MiniMe UI UX Design",
     description:
-      "Desain UI/UX aplikasi monitoring ibu hamil yang menyediakan tampilan ramah pengguna untuk memantau perkembangan kehamilan, jadwal kontrol, pengingat kesehatan, dan edukasi selama masa kehamilan.",
+      "A UI/UX design project for a pregnancy monitoring application that provides a user-friendly interface to track pregnancy progress, health reminders, medical check-up schedules, and educational content for expecting mothers.",
     tech: ["Figma"],
     link: "https://www.figma.com/proto/mhFkkeB2K16jYI2zKJAumO/MiniMe?node-id=1-3&t=6PeFhWcalg7SPYSN-1",
   },
   {
-    title: "SanberCode Project Lowongan Pekerjaan",
+    title: "SanberCode Job Vacancy Project",
     description:
-      "Website sederhana dengan landing page lowongan pekerjaan yang menampilkan daftar pekerjaan, detail job, dan tampilan UI responsif sebagai final project SanberCode.",
+      "A simple job vacancy landing page website developed as a final project at SanberCode. The application displays job listings, job details, and features a responsive and clean UI to improve user accessibility.",
     tech: ["JavaScript", "HTML", "React", "Tailwind CSS"],
     link: "https://finalproject-aditrisuryanoplagiat.netlify.app/",
+  },
+  {
+    title: "SpeakBuddy Language Learning App",
+    description:
+      "An AI-powered learning application designed to help children who are still developing their speaking skills. SpeakBuddy uses interactive, child-friendly AI guidance to support speech learning, pronunciation, and confidence building through simple and engaging activities.",
+    tech: ["React Native", "Next.js"],
+    link: "https://speakbuddy-id.vercel.app/",
   },
 ];
 
@@ -86,8 +93,10 @@ function Project() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <h2 className="text-6xl text-center font-semibold text-teal-300 p-1"
-        style={{ textShadow: '2px 2px 1px white' }}>
+        <h2
+          className="text-6xl text-center font-semibold text-teal-300 p-1"
+          style={{ textShadow: "2px 2px 1px white" }}
+        >
           Featured Projects
         </h2>
         <p className=" text-center text-xl text-slate-300">
@@ -148,7 +157,7 @@ function Project() {
               className="mt-6 inline-flex items-center text-base font-medium text-teal-300 transition group-hover:gap-2"
               whileHover={{ gap: "12px" }}
             >
-              View Repository →
+              View Detail →
             </motion.a>
           </motion.article>
         ))}

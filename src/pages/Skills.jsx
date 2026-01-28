@@ -9,6 +9,7 @@ import Git from "../assets/git.png";
 import Figma from "../assets/figma.svg";
 import Vite from "../assets/Vite.png";
 import NextJs from "../assets/nextjs.png";
+import Typescript from "../assets/typescript.png";
 
 const skills = [
   { name: "HTML", img: HTML },
@@ -18,6 +19,7 @@ const skills = [
   { name: "React", img: reactLogo },
   { name: "Vite", img: Vite },
   { name: "Next", img: NextJs },
+  { name: "Typescript", img: Typescript },
   { name: "Java", img: Java },
   { name: "Git", img: Git },
   { name: "Figma", img: Figma },
@@ -80,7 +82,7 @@ function Skills() {
 
       {/* Skill Grid */}
       <motion.div
-        className="mt-10 flex flex-wrap justify-center gap-6 max-w-4xl mx-auto"
+        className="mt-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
         variants={gridVariants}
         initial="hidden"
         whileInView="visible"
